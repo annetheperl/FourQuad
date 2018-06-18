@@ -1,4 +1,19 @@
 python version 3.6.5
+uses matplotlib, numpy and argparse, noted in the requirements.txt
 
 pip install -r requirements.txt
 python FourQuadrantModel.py Data.csv
+
+------------
+
+you can change the cap rate used in the property value calcuation (and therefore construction market 
+and space market adjustment curves) by optionally adding  -e value.
+
+Example: python FourQuadrantModel.py Data.csv -e 0.07
+
+this will ad 7% to the risk free rate (10 year treasury yield)
+
+------------
+
+The precise data series are noted in the xlsx. The quarterly data was transformed to monthly in excel and pasted into the CSV.
+The other data transforms are done in py. 
