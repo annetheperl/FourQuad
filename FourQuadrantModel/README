@@ -15,11 +15,43 @@ Example: python FourQuadrantModel.py Data.csv -e 0.07
 
 this will ad 7% to the risk free rate (10 year treasury yield)
 ----------------------------------------------------------
-DATA
-
-The precise data series are noted in the xlsx. The quarterly data was transformed to monthly in excel and pasted into the CSV.
-The other data transforms are done in py. 
-----------------------------------------------------------
 OTHER NOTE
 utilized flake8 for style guide enforcement
+----------------------------------------------------------
+MODEL + DATA
+
+DATA
+input data can be found in Data.CSV. The py script runs regressions but does not write the data. Equivalent output
+data can be found on the 'Model' tab of the .xlsx and is in blue text. All transforms can be found in the xlsx
+and most are repeated in python. The only exception is that the quarterly data is only converted to monthly in excel. 
+
+HYPOTHESIS
+Based on personal observation, I question whether the real estate market is behaving according to it's fundmentals. 
+To investigate this, I used economic census data on construction spending, housing inventories, lessor revenues as inputs 
+to DiPasqal & Wheaton's Four Quadrant Model for analyzing the real estate market as an introductory research step to investigate
+whether the system is functioning as it should. 
+
+CONCLUSIONS
+The most intriguing result is that quantity of construction and quantity of rental units
+appear to be inversely releated, which is counter to the model's predictions and to common sense, however it is consistent
+with the intital hypothesis. One potential reason could be that larger units are being constructied, but the overall 
+number of units is declining or staying flat. Additional analysis on the nature of residentail multi-family home construction
+would be required. Statistical testing is incomplete (did not test data for autocorrelation, heteroskedasticy, skew, or p-tests for statistical
+significant). Proxies were used for property values and rent, construction data was incomplete. Best efforts were made
+for soundness of the data. 
+
+FOUR QUADRANT MODEL MECHANICS
+An increase in demand for rental housing should put upward pressure on rents in the short run, 
+this leads to increased asset prices, taken as rent/caprate (ceterus parabus), higher asset prices 
+eventually lead to increased construction activities. Increased construction activities are eventually reflected
+in the as a rental market adjustment stock adjustment. The construction activities can be thought of as a call option 
+with a price equal to construction costs and a strike price equal to asset prices. As asset prices increase, 
+existing projects go in-the-money as it is worth it to build, if asset prices fall the option is out of the money 
+and it costs more to build then the asset is worth. If prices continue to rise the construction costs rise with them until the option
+is out of the money and construction activity stops. At that point the initial increase in demand is met, rents fall back to
+a new equilibrium level, this depresses property values, which further disincentivies new construction. 
+
+
+
+
 
